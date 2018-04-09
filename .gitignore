@@ -34,3 +34,4 @@ npm-debug.log
 !.elasticbeanstalk/*.global.yml
 
 assets/elm/elm-stuff
+assets/vendor
