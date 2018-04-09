@@ -14,7 +14,8 @@
 import "phoenix_html"
 
 // Import local files
-//
+const elmDiv = document.getElementById('elm-main'),
+  elmApp = Elm.Main.embed(elmDiv);
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 
