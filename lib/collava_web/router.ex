@@ -21,6 +21,10 @@ defmodule CollavaWeb.Router do
     resources("/users", UserController)
   end
 
+  forward "/graphiql", Absinthe.Plug.GraphiQL,
+  schema: CollavaWeb.Schema,
+  interface: :simple,
+  context: %{pubsub: CollavaWeb.Endpoint}
   # Other scopes may use custom stacks.
   # scope "/api", CollavaWeb do
   #   pipe_through :api
