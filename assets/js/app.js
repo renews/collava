@@ -14,8 +14,24 @@
 import "phoenix_html"
 
 // Import local files
-const elmDiv = document.getElementById('elm-main'),
-  elmApp = Elm.Main.embed(elmDiv);
+import Vue from "vue";
+import 'vueify/lib/insert-css'
+import Sample from "./vue/sample.vue"
+
+
+new Vue({
+  el: '#main',
+  components: {
+    Sample
+  }
+});
+
+new Vue({
+  el: "#hello-world",
+  data: {
+    message: "Hello World asd"
+  }
+});
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 

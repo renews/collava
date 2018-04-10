@@ -37,18 +37,13 @@ exports.config = {
   // Phoenix paths configuration
   paths: {
     // Dependencies and current project directories to watch
-    watched: ["static", "css", "js", "vendor", "elm"],
+    watched: ["static", "css", "js", "vendor"],
     // Where to compile files to
     public: "../priv/static"
   },
 
   // Configure your plugins
   plugins: {
-    elmBrunch: {
-      elmFolder: "elm/",
-      mainModules: ["Main.elm"],
-      outputFolder: "../vendor/"
-    },
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/vendor/]
@@ -62,6 +57,12 @@ exports.config = {
   },
 
   npm: {
-    enabled: true
+    enabled: true,
+    aliases: {
+      'vue': 'vue/dist/vue.common.js'
+    }
+    // Whitelist the npm deps to be pulled in as front-end assets.
+    // All other deps in package.json will be excluded from the bundle.
+    // whitelist: ["phoenix", "phoenix_html", "vue"]
   }
 };
