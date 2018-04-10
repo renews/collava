@@ -11,8 +11,14 @@ config :collava, CollavaWeb.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
-                    cd: Path.expand("../assets", __DIR__)]]
+  watchers: [
+    node: [
+      "node_modules/brunch/bin/brunch",
+      "watch",
+      "--stdin",
+      cd: Path.expand("../assets", __DIR__)
+    ]
+  ]
 
 # ## SSL Support
 #
@@ -50,9 +56,10 @@ config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
 config :collava, Collava.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  adapter: RethinkDB.Ecto,
+  username: "",
+  password: "",
   database: "collava_dev",
   hostname: "localhost",
+  port: 28015,
   pool_size: 10
