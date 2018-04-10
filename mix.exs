@@ -42,7 +42,9 @@ defmodule Collava.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:ecto, "~> 2.1.1"},
-      {:rethinkdb_ecto, "~> 0.7"}
+      {:rethinkdb_ecto, "~> 0.7"},
+      {:absinthe_ecto, "~> 0.1.0"},
+      {:absinthe_plug, "~> 1.3.0"}
     ]
   end
 
