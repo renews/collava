@@ -1,14 +1,14 @@
-defmodule CollavaWeb.UsersResolver do
-  alias Collava.UserSample
+defmodule CollavaWeb.Sample.UsersResolver do
+  alias Collava.Sample.Users
   import IEx
 
   def all_users(_root, _args, _info) do
-    users = UserSample.list_users()
+    users = Users.list_users()
     {:ok, users}
   end
 
   def create_user(_root, args, _info) do
-    case UserSample.create_user(args) do
+    case Users.create_user(args) do
       {:ok, user} ->
         {:ok, user}
       _error ->
@@ -17,7 +17,7 @@ defmodule CollavaWeb.UsersResolver do
   end
 
   def get_user(%{id: id}, _info) do
-    case UserSample.get_user!(id) do
+    case Users.get_user!(id) do
       nil -> {:error, "User id #{id} not found!"}
       user -> {:ok, user}
     end
@@ -25,14 +25,14 @@ defmodule CollavaWeb.UsersResolver do
 
   def update(%{id: id, user: user_params}, _info) do
     case get_user(%{id: id}, _info) do
-      {:ok, user} -> user |> UserSample.update_user(user_params)
+      {:ok, user} -> user |> Users.update_user(user_params)
       {:error, _} -> {:error, "user id #{id} not found"}
     end
   end
 
   def delete(%{id: id}, _info) do
     case get_user(%{id: id}, _info) do
-      {:ok, user} -> user |> UserSample.delete_user()
+      {:ok, user} -> user |> Users.delete_user()
       {:error, _} -> {:error, "user id #{id} not found"}
     end
   end
