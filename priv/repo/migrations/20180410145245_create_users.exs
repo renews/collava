@@ -3,9 +3,11 @@ defmodule Collava.Repo.Migrations.CreateUsers do
 
   def change do
     create table(:users) do
-      add(:name, :string)
+      add :name, :string
+      add :age, :integer
 
       timestamps()
     end
+
   end
 end
