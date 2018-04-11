@@ -22,7 +22,7 @@ defmodule CollavaWeb.Router do
   end
 
   forward "/graphiql", Absinthe.Plug.GraphiQL,
-  schema: CollavaWeb.Schema,
+  schema: CollavaWeb.UserSchema,
   interface: :simple,
   context: %{pubsub: CollavaWeb.Endpoint}
   # Other scopes may use custom stacks.
