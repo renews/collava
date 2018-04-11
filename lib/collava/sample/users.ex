@@ -1,4 +1,4 @@
-defmodule Collava.UserSample do
+defmodule Collava.Sample.Users do
   @moduledoc """
   The System context.
   """
@@ -6,7 +6,7 @@ defmodule Collava.UserSample do
   import Ecto.Query, warn: false
   alias Collava.Repo
 
-  alias Collava.UserSample.User
+  alias Collava.Sample.User
 
   @doc """
   Returns the list of users.
