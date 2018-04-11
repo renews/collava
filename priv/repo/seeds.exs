@@ -10,7 +10,7 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-alias Collava.System.User
+alias Collava.Sample.User
 alias Collava.Repo
 
 %User{name: "Thales", age: 100} |> Repo.insert!
