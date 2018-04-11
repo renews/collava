@@ -1,4 +1,4 @@
-defmodule Collava.UserSample.User do
+defmodule Collava.Sample.User do
   use Ecto.Schema
   import Ecto.Changeset
 
