@@ -7,7 +7,7 @@ use Mix.Config
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
 config :collava, CollavaWeb.Endpoint,
-  http: [port: 4000],
+  http: [port: System.get_env("PORT") || 4000],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
@@ -60,6 +60,6 @@ config :collava, Collava.Repo,
   username: "",
   password: "",
   database: "collava_dev",
-  hostname: "localhost",
+  hostname: "rethink_db",
   port: 28015,
   pool_size: 10
