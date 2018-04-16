@@ -1,6 +1,5 @@
 defmodule CollavaWeb.Sample.UsersResolver do
   alias Collava.Sample.Users
-  import IEx
 
   def all_users(_root, _args, _info) do
     users = Users.list_users()
@@ -11,6 +10,7 @@ defmodule CollavaWeb.Sample.UsersResolver do
     case Users.create_user(args) do
       {:ok, user} ->
         {:ok, user}
+
       _error ->
         {:error, "could not create user"}
     end

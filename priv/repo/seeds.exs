@@ -13,5 +13,12 @@
 alias Collava.Sample.User
 alias Collava.Repo
 
-%User{name: "Thales", age: 100} |> Repo.insert!
-%User{name: "Rene", age: 200} |> Repo.insert!
+# Collava.Repo.delete_all()
+
+Collava.Sample.User.changeset(%Collava.Sample.User{}, %{
+  name: "Test User",
+  email: "testuser@example.com",
+  password: "secret",
+  password_confirmation: "secret"
+})
+|> Collava.Repo.insert!()

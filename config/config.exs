@@ -25,3 +25,30 @@ config :logger, :console,
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
+
+# %% Coherence Configuration %%   Don't remove this line
+config :coherence,
+  user_schema: Collava.Sample.User,
+  repo: Collava.Repo,
+  module: Collava,
+  web_module: CollavaWeb,
+  router: CollavaWeb.Router,
+  messages_backend: CollavaWeb.Coherence.Messages,
+  logged_out_url: "/",
+  email_from_name: "Collava",
+  email_from_email: "account@collavaweb.com",
+  opts: [
+    :authenticatable,
+    :recoverable,
+    :lockable,
+    :trackable,
+    :unlockable_with_token,
+    :registerable,
+    :rememberable
+  ]
+
+config :coherence, CollavaWeb.Coherence.Mailer,
+  adapter: Swoosh.Adapters.Sendgrid,
+  api_key: "your api key here"
+
+# %% End Coherence Configuration %%

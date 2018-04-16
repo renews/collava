@@ -20,7 +20,7 @@ defmodule Collava.Mixfile do
   def application do
     [
       mod: {Collava.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :coherence]
     ]
   end
 
@@ -39,12 +39,15 @@ defmodule Collava.Mixfile do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
-      {:gettext, "~> 0.11"},
+      {:gettext, "0.13.1"},
       {:cowboy, "~> 1.0"},
       {:ecto, "~> 2.1.1"},
       {:rethinkdb_ecto, "~> 0.7"},
       {:absinthe_ecto, "~> 0.1.0"},
-      {:absinthe_plug, "~> 1.3.0"}
+      {:absinthe_plug, "~> 1.3.0"},
+      {:canary, "~> 1.1.1"},
+      {:canada, "~> 1.0.1"},
+      {:coherence, "~> 0.5"}
     ]
   end
 
