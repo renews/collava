@@ -11,27 +11,9 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
-import "phoenix_html"
+import "phoenix_html";
 
 // Import local files
-import Vue from "vue";
-import 'vueify/lib/insert-css'
-import Sample from "./vue/sample.vue"
-
-
-new Vue({
-  el: '#main',
-  components: {
-    Sample
-  }
-});
-
-new Vue({
-  el: "#hello-world",
-  data: {
-    message: "Hello World asd"
-  }
-});
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 

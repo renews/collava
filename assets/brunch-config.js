@@ -20,7 +20,11 @@ exports.config = {
       // }
     },
     stylesheets: {
-      joinTo: "css/app.css"
+      joinTo: {
+        "css/app.css": "css/app.scss",
+        "css/bulma.css": "css/bulma-customize.scss",
+        "css/404.css": "css/404.scss"
+      }
     },
     templates: {
       joinTo: "js/app.js"
@@ -57,10 +61,7 @@ exports.config = {
   },
 
   npm: {
-    enabled: true,
-    aliases: {
-      'vue': 'vue/dist/vue.common.js'
-    }
+    enabled: true
     // Whitelist the npm deps to be pulled in as front-end assets.
     // All other deps in package.json will be excluded from the bundle.
     // whitelist: ["phoenix", "phoenix_html", "vue"]
