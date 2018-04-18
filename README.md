@@ -11,8 +11,9 @@ To STOP environment `mix env.stop`
 
 ### Stack
 
-* Vue
+* Markojs - JS
+* Bulma - CSS
 * Phoenix
 * GraphQL
 * Docker/DockerCompose
-* Rethinkdb
+* Rethinkdb - DB
